@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "permission")
-class Permission {
+public class Permission {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
