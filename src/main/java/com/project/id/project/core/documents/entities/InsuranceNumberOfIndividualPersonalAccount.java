@@ -1,10 +1,18 @@
 package com.project.id.project.core.documents.entities;
 
 import com.project.id.project.core.Document;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "insurance_number_of_individual_personal_account")
 public class InsuranceNumberOfIndividualPersonalAccount extends Document {
+    @Column(name = "registration_date")
     private String registrationDate;
+    @Column(name = "birthplace")
     private String birthPlace;
+    @Column(name = "value_insurance_number_of_individual_personal_account")
     private String InsuranceNumberOfIndividualPersonalAccount;
 
     public InsuranceNumberOfIndividualPersonalAccount() {

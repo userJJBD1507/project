@@ -1,13 +1,24 @@
 package com.project.id.project.core.documents.entities;
 
 import com.project.id.project.core.Document;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+@Table(name = "foreign_passport_table")
+@Entity
 public class ForeignPassport extends Document {
+    @Column(name = "number")
     private String number;
+    @Column(name = "citizenship")
     private String citizenship;
+    @Column(name = "birthplace")
     private String birthplace;
+    @Column(name = "expiration_date")
     private String expirationDate;
+    @Column(name = "who_issued")
     private String whoIssued;
+    @Column(name = "issue_date")
     private String issueDate;
 
     public ForeignPassport() {

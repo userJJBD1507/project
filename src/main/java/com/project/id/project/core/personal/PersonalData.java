@@ -1,17 +1,33 @@
 package com.project.id.project.core.personal;
 
 import com.project.id.project.core.Id;
+import com.project.id.project.core.IdConverter;
 import com.project.id.project.core.utils.Gender;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "personal_data_table")
 public class PersonalData {
+    @jakarta.persistence.Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Convert(converter = IdConverter.class)
+    @Column(name = "id")
     private Id id;
+    @Column(name = "")
     private String avatar;
+    @Column(name = "invocation")
     private String invocation;
+    @Column(name = "name")
     private String name;
+    @Column(name = "surname")
     private String surname;
+    @Column(name = "gender")
     private Gender gender;
+    @Column(name = "birthdate")
     private String birthdate;
+    @Column(name = "locality")
     private String locality;
+    @Column(name = "time_zone")
     private String timeZone;
 
     public PersonalData() {

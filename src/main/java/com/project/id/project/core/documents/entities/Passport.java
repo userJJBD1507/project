@@ -1,13 +1,24 @@
 package com.project.id.project.core.documents.entities;
 
 import com.project.id.project.core.Document;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "passport_table")
 public class Passport extends Document {
+    @Column(name = "series_number")
     private String seriesAndNumber;
+    @Column(name = "place_of_birth")
     private String birthplace;
+    @Column(name = "who_issued")
     private String whoIssued;
+    @Column(name = "division_code")
     private String divisionCode;
+    @Column(name = "issue_date")
     private String issueDate;
+    @Column(name = "registration_address")
     private String registrationAddress;
 
     public Passport() {

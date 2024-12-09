@@ -1,7 +1,15 @@
 package com.project.id.project.core;
 
+import jakarta.persistence.*;
+
+@MappedSuperclass
 public abstract class Email {
+    @jakarta.persistence.Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Convert(converter = IdConverter.class)
+    @Column(name = "id")
     private Id id;
+    @Column(name = "email")
     private String email;
 
     public Email() {

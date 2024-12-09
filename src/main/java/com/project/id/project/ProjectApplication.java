@@ -28,35 +28,4 @@ public class ProjectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ProjectApplication.class, args);
 	}
-	@Autowired
-	private Repository repository;
-	@Bean
-	public AuthenticationProvider authenticationProvider() {
-		DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-		daoAuthenticationProvider.setUserDetailsService(userDetailsService());
-		daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
-		return daoAuthenticationProvider;
-	}
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
-	@Bean
-	public UserDetailsService userDetailsService() {
-		return username -> {
-			Entity entity = repository.get(username);
-			if (entity == null) {
-				throw new UsernameNotFoundException(" ");
-			}
-			return new User(
-					entity.getUsername(),
-					entity.getPassword(),
-					Collections.emptyList()
-			);
-		};
-	}
-	@Bean
-	public AuthenticationManager authenticationManager(AuthenticationConfiguration cfg) throws Exception {
-		return cfg.getAuthenticationManager();
-	}
 }

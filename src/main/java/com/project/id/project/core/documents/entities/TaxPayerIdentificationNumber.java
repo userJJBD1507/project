@@ -1,12 +1,22 @@
 package com.project.id.project.core.documents.entities;
 
 import com.project.id.project.core.Document;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "taxpayer_identification_number_table")
 public class TaxPayerIdentificationNumber extends Document {
+    @Column(name = "taxpayer_identification_number")
     private String taxpayerIdentificationNumber;
+    @Column(name = "issue_date")
     private String issueDate;
+    @Column(name = "birthplace")
     private String birthPlace;
+    @Column(name = "effective_until")
     private String effectiveUntil;
+    @Column(name = "issuing_authority")
     private String issuingAuthority;
 
     public TaxPayerIdentificationNumber() {

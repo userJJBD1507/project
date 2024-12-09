@@ -1,24 +1,46 @@
 package com.project.id.project.core.documents.entities;
 
 import com.project.id.project.core.Document;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "birth_certificate_table")
 public class BirthCertificate extends Document {
+    @Column(name = "series_number")
     private String seriesAndNumber;
+    @Column(name = "citizenship")
     private String citizenship;
+    @Column(name = "birthplace")
     private String birthplace;
+    @Column(name = "birth_record_num")
     private String birthRecordData;
+    @Column(name = "fathers_surname")
     private String fathersSurname;
+    @Column(name = "fathers_name")
     private String fathersName;
+    @Column(name = "fathers_patronymic")
     private String fathersPatronymic;
+    @Column(name = "fathers_citizenship")
     private String fathersCitizenship;
+    @Column(name = "fathers_birthdate")
     private String fathersBirthdate;
+    @Column(name = "mothers_surname")
     private String mothersSurname;
+    @Column(name = "mothers_name")
     private String mothersName;
+    @Column(name = "mothers_patronymic")
     private String mothersPatronymic;
+    @Column(name = "mothers_citizenship")
     private String mothersCitizenship;
+    @Column(name = "mothers_birthdate")
     private String mothersBirthdate;
+    @Column(name = "registration_place")
     private String stateRegistrationPlace;
+    @Column(name = "place_issue_certificate")
     private String issueCertificatePlace;
+    @Column(name = "issue_date")
     private String issueString;
 
     public BirthCertificate() {

@@ -1,10 +1,18 @@
 package com.project.id.project.core.documents.entities;
 
 import com.project.id.project.core.Document;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "voluntary_health_insurance_table")
 public class VoluntaryHealthInsurance extends Document {
+    @Column(name = "onset_of_action")
     private String effectiveFrom;
+    @Column(name = "end_of_action")
     private String effectiveUntil;
+    @Column(name = "policyHolder")
     private String policyHolder;
 
     public VoluntaryHealthInsurance() {

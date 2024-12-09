@@ -2,15 +2,28 @@ package com.project.id.project.core.documents.entities;
 
 import com.project.id.project.core.Document;
 import com.project.id.project.core.utils.DrivingCategory;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "driving_license_table")
 public class DrivingLicense extends Document {
+    @Column(name = "number")
     private String number;
+    @Column(name = "birthplace")
     private String birthplace;
+    @Column(name = "whom_issued")
     private String whoIssued;
+    @Column(name = "validity_until")
     private String validUntil;
+    @Column(name = "issue_date")
     private String issueDate;
+    @Column(name = "issue_place")
     private String placeOfIssue;
+    @Column(name = "special_marks")
     private String comments;
+    @Column(name = "category")
     private DrivingCategory category;
 
     public DrivingLicense() {

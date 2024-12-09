@@ -1,7 +1,15 @@
 package com.project.id.project.core;
 
+import jakarta.persistence.*;
+
+@MappedSuperclass
 public abstract class Phone {
+    @jakarta.persistence.Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Convert(converter = IdConverter.class)
+    @Column(name = "id")
     private Id id;
+    @Column(name = "phone_number")
     private String phoneNumber;
 
     public Phone() {

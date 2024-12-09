@@ -1,14 +1,26 @@
 package com.project.id.project.core;
 
 import com.project.id.project.core.utils.Gender;
+import jakarta.persistence.*;
 
+@MappedSuperclass
 public abstract class Document {
+    @jakarta.persistence.Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Convert(converter = IdConverter.class)
+    @Column(name = "id")
     private Id id;
+    @Column(name = "photo")
     private String photo;
+    @Column(name = "surname")
     private String surname;
+    @Column(name = "name")
     private String name;
+    @Column(name = "patronymic")
     private String patronymic;
+    @Column(name = "birthdate")
     private String birthdate;
+    @Column(name = "gender")
     private Gender gender;
 
     public Document() {

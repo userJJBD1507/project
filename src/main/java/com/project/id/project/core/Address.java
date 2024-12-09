@@ -1,15 +1,31 @@
 package com.project.id.project.core;
 
+import jakarta.persistence.*;
+
+@MappedSuperclass
 public abstract class Address {
+    @jakarta.persistence.Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Convert(converter = IdConverter.class)
+    @Column(name = "id")
     private Id id;
+    @Column(name = "")
     private String name;
+    @Column(name = "")
     private String city;
+    @Column(name = "")
     private String region;
+    @Column(name = "")
     private String street;
+    @Column(name = "")
     private int house;
+    @Column(name = "")
     private int subway;
+    @Column(name = "")
     private int floor;
+    @Column(name = "")
     private int apartment;
+    @Column(name = "")
     private int intercom;
 
     public Address() {
