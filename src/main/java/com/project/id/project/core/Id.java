@@ -1,8 +1,10 @@
 package com.project.id.project.core;
 
-public record Id(int value) {
+import java.io.Serializable;
+
+public record Id(int id) implements Serializable {
     public Id {
-        if (value <= 0) {
+        if (id <= 0) {
             throw new IllegalArgumentException("ID must be a positive number");
         }
     }

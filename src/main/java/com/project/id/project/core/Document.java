@@ -4,10 +4,8 @@ import com.project.id.project.core.utils.Gender;
 import jakarta.persistence.*;
 
 @MappedSuperclass
-public abstract class Document {
-    @jakarta.persistence.Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Convert(converter = IdConverter.class)
+public abstract class Document{
+    @EmbeddedId
     @Column(name = "id")
     private Id id;
     @Column(name = "photo")

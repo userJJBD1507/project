@@ -8,9 +8,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "personal_data_table")
 public class PersonalData {
-    @jakarta.persistence.Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Convert(converter = IdConverter.class)
+    @EmbeddedId
     @Column(name = "id")
     private Id id;
     @Column(name = "")

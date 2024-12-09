@@ -8,7 +8,7 @@ public class IdConverter implements AttributeConverter<Id, Integer> {
 
     @Override
     public Integer convertToDatabaseColumn(Id attribute) {
-        return (attribute != null) ? attribute.value() : null;
+        return (attribute != null) ? attribute.id() : null;
     }
 
     @Override

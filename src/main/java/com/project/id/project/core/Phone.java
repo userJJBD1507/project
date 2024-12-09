@@ -4,9 +4,7 @@ import jakarta.persistence.*;
 
 @MappedSuperclass
 public abstract class Phone {
-    @jakarta.persistence.Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Convert(converter = IdConverter.class)
+    @EmbeddedId
     @Column(name = "id")
     private Id id;
     @Column(name = "phone_number")
