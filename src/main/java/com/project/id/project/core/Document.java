@@ -4,6 +4,6 @@ public abstract class Document {
     private String photo;
     private String surname;
     private String name;
-    private String patronymicc;
+    private String patronymic;
     private String birthdate;
 }
