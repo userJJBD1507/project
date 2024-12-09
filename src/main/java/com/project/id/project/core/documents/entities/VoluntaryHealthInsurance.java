@@ -12,7 +12,7 @@ public class VoluntaryHealthInsurance extends Document {
     private String effectiveFrom;
     @Column(name = "end_of_action")
     private String effectiveUntil;
-    @Column(name = "policyHolder")
+    @Column(name = "policy_holder")
     private String policyHolder;
 
     public VoluntaryHealthInsurance() {
