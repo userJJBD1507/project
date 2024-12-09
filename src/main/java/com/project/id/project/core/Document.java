@@ -5,5 +5,5 @@ public abstract class Document {
     private String surname;
     private String name;
     private String patronymic;
-    private String birthdate;
+    private String birthdateвы;
 }
